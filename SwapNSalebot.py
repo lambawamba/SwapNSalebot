@@ -4,15 +4,6 @@ import time
 import sqlite3
 import datetime
 
-
-USERNAME  = ""
-#This is the bot's Username. In order to send mail, he must have some amount of Karma.
-PASSWORD  = ""
-#This is the bot's Password. 
-USERAGENT = "/u/(USERNAME GOES HERE) - History bot for /r/gameswap and /r/GameSale V.1.02 Creator - Lambawamba"
-#This is a short description of what the bot does. For example "/u/GoldenSights' Newsletter bot"
-SUBREDDIT = "(subgoeshere)+(subgoeshere)"
-#This is the sub or list of subs to scan for new posts. For a single sub, use "sub1". For multiple subreddits, use "sub1+sub2+sub3+..."
 TITLESTRING = ["[H]", "[HAVE]", "(H)", "HAVE", "WTB", "WTS"]
 #These are the words you are looking for in the titles.
 MAXPOSTS = 30
@@ -41,13 +32,18 @@ print('Loaded Completed table')
 sql.commit()
 
 print("Logging in")
-r = praw.Reddit(USERAGENT)
-r.login(USERNAME, PASSWORD) 
+
+r = praw.Reddit(client_id='',
+                     client_secret='',
+                     password='',
+                     user_agent='History info for /r/gameswap and /r/GameSale V.1.02 Creator - Lambawamba',
+                     username='')
+
+subreddit = r.subreddit('')
 
 def scanSub():
-    print('Searching '+ SUBREDDIT + '.')
-    subreddit = r.get_subreddit(SUBREDDIT)
-    posts = subreddit.get_new(limit=MAXPOSTS)
+    print('Searching...')
+    posts = subreddit.new(limit=MAXPOSTS)
     for post in posts:
         pid = post.id
         cur.execute('SELECT * FROM oldposts WHERE ID=?', [pid])
@@ -72,7 +68,7 @@ def scanSub():
                     # %d %B %Y = "06 February 2015"
                     print("Commenting user history")
                     comment = COMMENT_TEMPLATE % (author.name, author_created, years, author.link_karma, author.comment_karma)
-                    post.add_comment(comment).distinguish()
+                    post.reply(comment).mod.distinguish(sticky=True)
             sql.commit()
 
 
