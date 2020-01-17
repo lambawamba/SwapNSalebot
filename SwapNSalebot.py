@@ -16,7 +16,10 @@ Username | Join date | Link karma | Comment karma
 :- | :-: | -: | -:
 %s | %s / %s  | %d | %d
 
+Please read [this post](https://www.reddit.com/r/GameSale/comments/8fc1jw/mod_proper_title_format_and_reminder_on/) to stay safe. Known scammers are listed on the [USL](https://universalscammerlist.com/).
+
 ^^This ^^information ^^does ^^not ^^guarantee ^^a ^^successful ^^swap. ^^Creator ^^- ^^lambawamba
+
 """
 
 
