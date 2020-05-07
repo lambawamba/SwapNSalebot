@@ -11,12 +11,13 @@ MAXPOSTS = 30
 WAIT = 20
 #This is how many seconds you will wait between cycles. The bot is completely inactive during this time.
 
-COMMENT_TEMPLATE = """ 
+COMMENT_TEMPLATE = """
+**It's dangerous to go alone! Take this.**
+
+[GameSale Rules](https://www.reddit.com/r/GameSale/wiki/index) | [Avoiding Scams] (https://www.reddit.com/r/GameSale/wiki/avoidscams) | [Universal Scammer List](https://universalscammerlist.com/search.php)
 Username | Join date | Link karma | Comment karma
 :- | :-: | -: | -:
 %s | %s / %s  | %d | %d
-
-Please read [this post](https://www.reddit.com/r/GameSale/comments/8fc1jw/mod_proper_title_format_and_reminder_on/) to stay safe. Known scammers are listed on the [USL](https://universalscammerlist.com/).
 
 ^^This ^^information ^^does ^^not ^^guarantee ^^a ^^successful ^^swap. ^^Creator ^^- ^^lambawamba
 
