@@ -14,8 +14,7 @@ WAIT = 20
 COMMENT_TEMPLATE = """
 **It's dangerous to go alone! Take this.**
 
-
-[GameSale Rules](https://www.reddit.com/r/GameSale/wiki/index) | [Avoiding Scams] (https://www.reddit.com/r/GameSale/wiki/avoidscams) | [Universal Scammer List](https://universalscammerlist.com/search.php)
+[Avoiding Scams] (https://www.reddit.com/r/GameSale/wiki/avoidscams) | [Universal Scammer List](https://universalscammerlist.com/search.php)
 
 Username | Join date | Link karma | Comment karma
 :- | :-: | -: | -:
