@@ -73,7 +73,7 @@ def scanSub():
                     author_created = datetime.datetime.strftime(author_created, "%d %B %Y")
                     # %d %B %Y = "06 February 2015"
                     print("Commenting user history")
-                    comment = COMMENT_TEMPLATE % (author.name, author_created, years, author.link_karma, author.comment_karma)
+                    comment = COMMENT_TEMPLATE % (("/u/"+ author.name), author_created, years, author.link_karma, author.comment_karma)
                     post.reply(comment).mod.distinguish(sticky=True)
             sql.commit()
 
